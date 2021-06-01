@@ -1,15 +1,25 @@
 const randomNumber = function (min, max) {
-  if (max <= min || min < 0 || max < 0) {
-    // eslint-disable-next-line no-console
-    console.log('Неправильное значение');
+  if (max <= min ){
+    window.console.error('максимальное значение меньше минимального');
+  }
+  if (min < 0 ) {
+    window.console.error('минимальное значение меньше 0');
+  }
+  if (max < 0) {
+    window.console.error('максимальное значение меньше 0');
   }
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 const randomFloat = function (min, max) {
-  if (max <= min || min < 0 || max < 0) {
-    // eslint-disable-next-line no-console
-    console.log('Неправильное значение');
+  if (max <= min ){
+    window.console.error('максимальное значение меньше минимального');
+  }
+  if (min < 0 ) {
+    window.console.error('минимальное значение меньше 0');
+  }
+  if (max < 0) {
+    window.console.error('максимальное значение меньше 0');
   }
   return Math.random() * (max - min) + min;
 };
