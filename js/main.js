@@ -25,4 +25,4 @@ const randomFloat = function (min, max) {
 };
 
 randomNumber();
-randomFloat();
+randomFloat().toFixed(2);
