@@ -1,5 +1,6 @@
 const errorCheck = function (min, max) {
   let displayError = '';
+  let displayStatus = false;
   if (max <= min) {
     displayError = ('максимальное значение меньше минимального');
   }
@@ -7,7 +8,11 @@ const errorCheck = function (min, max) {
     displayError = ('одно из значений меньше 0');
   }
   if (displayError !== '') {
-    return displayError;
+    displayStatus = false;
+    return displayError && displayStatus;
+  }
+  else{
+    displayStatus = true;
   }
 };
 
