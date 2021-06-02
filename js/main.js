@@ -1,28 +1,28 @@
-const randomNumber = function (min, max) {
-  if (max <= min ){
-    window.console.error('максимальное значение меньше минимального');
+const errorCheck = function (min, max) {
+  let displayError = '';
+  if (max <= min) {
+    displayError = ('максимальное значение меньше минимального');
   }
-  if (min < 0 ) {
-    window.console.error('минимальное значение меньше 0');
+  else if (min < 0 || max < 0) {
+    displayError = ('одно из значений меньше 0');
   }
-  if (max < 0) {
-    window.console.error('максимальное значение меньше 0');
+  if (displayError !== '') {
+    return displayError;
   }
-  return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const randomFloat = function (min, max) {
-  if (max <= min ){
-    window.console.error('максимальное значение меньше минимального');
-  }
-  if (min < 0 ) {
-    window.console.error('минимальное значение меньше 0');
-  }
-  if (max < 0) {
-    window.console.error('максимальное значение меньше 0');
-  }
-  return Math.random() * (max - min) + min;
+
+const randomNumber = function(min, max){
+  Math.floor(Math.random() * (max - min + 1) + min);
+  return randomNumber;
 };
 
-randomNumber();
-randomFloat().toFixed(2);
+
+const randomCoordinate = function (min, max) {
+  Math.floor(Math.random() * (max - min + 1) + min);
+  return randomCoordinate;
+};
+
+errorCheck();
+randomNumber(0, 9.8);
+randomCoordinate(0, 9.8, 2);
