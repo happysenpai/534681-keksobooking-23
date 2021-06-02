@@ -1,6 +1,5 @@
 const errorCheck = function (min, max) {
   let displayError = '';
-  let displayStatus = false;
   if (max <= min) {
     displayError = ('максимальное значение меньше минимального');
   }
@@ -8,26 +7,23 @@ const errorCheck = function (min, max) {
     displayError = ('одно из значений меньше 0');
   }
   if (displayError !== '') {
-    displayStatus = false;
-    return displayError && displayStatus;
+    window.console.error(displayError);
+    return false;
   }
-  else{
-    displayStatus = true;
-  }
+  return true;
 };
 
 
 const randomNumber = function(min, max){
-  Math.floor(Math.random() * (max - min + 1) + min);
-  return randomNumber;
+  return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min) : null;
 };
 
 
-const randomCoordinate = function (min, max) {
-  Math.floor(Math.random() * (max - min + 1) + min);
-  return randomCoordinate;
+const randomCoordinates = function (min, max, floatQuantity) {
+  const randomValue = Math.floor(Math.random() * (max - min + 1) + min).toFixed(floatQuantity);
+  return errorCheck(min, max) ? randomValue : null;
 };
 
 errorCheck();
 randomNumber(0, 9.8);
-randomCoordinate(0, 9.8, 2);
+randomCoordinates(0, 9.8, 2);
