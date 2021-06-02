@@ -20,9 +20,9 @@ const randomNumber = function(min, max){
 
 
 const randomCoordinates = function (min, max, floatQuantity) {
-  const randomValue = Math.floor(Math.random() * (max - min + 1) + min).toFixed(floatQuantity);
-  return errorCheck(min, max) ? randomValue : null;
+  return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min).toFixed(floatQuantity) : null;
 };
+
 
 errorCheck();
 randomNumber(0, 9.8);
