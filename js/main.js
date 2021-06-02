@@ -24,6 +24,5 @@ const randomCoordinates = function (min, max, floatQuantity) {
 };
 
 
-errorCheck();
 randomNumber(0, 9.8);
 randomCoordinates(0, 9.8, 2);
