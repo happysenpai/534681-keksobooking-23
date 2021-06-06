@@ -27,32 +27,33 @@ const randomCoordinates = function (min, max, floatQuantity) {
 randomNumber(0, 9.8);
 randomCoordinates(0, 9.8, 2);
 
+const houseCard ={
+  author: {
+    avatar: 'img/avatars/user{{xx}}.png',
+  },
 
-const author = {
-  avatar: ['img/avatars/user{{xx}}.png'],
-};
+  offer: {
+    title: ('Супердом', 'такого вы еше не видели', '1 на миллион'),
+    address: (location.lat, location.lng),
+    price: randomNumber(70, 100),
+    type: ('flat', 'house', 'bungalow', 'hotel'),
+    rooms: randomNumber(1, 4),
+    guests: randomNumber(1, 8),
+    checkin: ('12:00','13:00','14:00'),
+    checkout: ('12:00', '13:00' , '14:00'),
+    features: ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'],
+    description: ('лучший дом с садом','дом вашей мечты','прекрасный вид на море'),
+    photos: ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
+      'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
+      'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'],
+  },
 
-const offer = {
-  title: ['Супердом', 'такого вы еше не видели', '1 на миллион'],
-  address: [location.lat, location.lng],
-  price: [123, 321, 234, 345],
-  type: ['flat', 'house', 'bungalow', 'hotel'],
-  rooms: [ 1, 2, 3, 4],
-  guests: [ 1, 2, 3, 4],
-  checkin: [ '12:00','13:00','14:00'],
-  checkout: [ '12:00', '13:00' , '14:00'],
-  features: ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'],
-  photos: ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
-    'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
-    'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'],
+  location:{
+    lat: randomCoordinates(35.65000, 35.70000, 5),
+    lng: randomCoordinates(139.70000, 139.80000, 5),
+  },
 };
-
-location ={
-  lat: [35.65000, 35.70000],
-  lng: [139.70000, 139.80000],
-};
-author();
-offer();
+houseCard();
 
 /*
 Структура каждого объекта должна быть следующей:
