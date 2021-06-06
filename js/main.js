@@ -14,7 +14,7 @@ const errorCheck = function (min, max) {
 };
 
 
-const randomNumber = function(min, max){
+const randomNumber = function (min, max) {
   return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min) : null;
 };
 
@@ -27,42 +27,32 @@ const randomCoordinates = function (min, max, floatQuantity) {
 randomNumber(0, 9.8);
 randomCoordinates(0, 9.8, 2);
 
+
 const author = {
-  avatar: ('img/avatars/user{{xx}}.png');
-
+  avatar: ['img/avatars/user{{xx}}.png'],
 };
+
 const offer = {
-  title:;
-  address:;
-  price:;
-  type: {
-    'flat', 
-    'house', 
-    'bungalow',
-    'hotel'};
-  rooms:;
-  guests:;
-  checkin:;
-  checkout:;
-  features:{
-    'wifi', 
-    'dishwasher', 
-    'parking', 
-    'washer', 
-    'elevator', 
-    'conditioner'};
-  photos:{
-    'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg', 
+  title: ['Супердом', 'такого вы еше не видели', '1 на миллион'],
+  address: [location.lat, location.lng],
+  price: [123, 321, 234, 345],
+  type: ['flat', 'house', 'bungalow', 'hotel'],
+  rooms: [ 1, 2, 3, 4],
+  guests: [ 1, 2, 3, 4],
+  checkin: [ '12:00','13:00','14:00'],
+  checkout: [ '12:00', '13:00' , '14:00'],
+  features: ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'],
+  photos: ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
     'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
-     'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'
-  };
+    'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'],
 };
 
-const location = {
-  lat:;
-  lng:;
+location ={
+  lat: [35.65000, 35.70000],
+  lng: [139.70000, 139.80000],
 };
-
+author();
+offer();
 /*
 Структура каждого объекта должна быть следующей:
 
