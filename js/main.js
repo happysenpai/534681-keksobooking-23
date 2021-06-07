@@ -27,34 +27,52 @@ const randomCoordinates = function (min, max, floatQuantity) {
 randomNumber(0, 9.8);
 randomCoordinates(0, 9.8, 2);
 
-const houseCard ={
+const HOUSE_CARD = {
   author: {
     avatar: 'img/avatars/user{{xx}}.png',
   },
-
   offer: {
     title: ('Супердом', 'такого вы еше не видели', '1 на миллион'),
-    address: (location.lat, location.lng),
+    address: location.lng,
     price: randomNumber(70, 100),
     type: ('flat', 'house', 'bungalow', 'hotel'),
     rooms: randomNumber(1, 4),
     guests: randomNumber(1, 8),
-    checkin: ('12:00','13:00','14:00'),
-    checkout: ('12:00', '13:00' , '14:00'),
+    checkin: ('12:00', '13:00', '14:00'),
+    checkout: ('12:00', '13:00', '14:00'),
     features: ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'],
-    description: ('лучший дом с садом','дом вашей мечты','прекрасный вид на море'),
+    description: ('лучший дом с садом', 'дом вашей мечты', 'прекрасный вид на море'),
     photos: ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
       'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
       'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'],
   },
 
-  location:{
+  location: {
     lat: randomCoordinates(35.65000, 35.70000, 5),
     lng: randomCoordinates(139.70000, 139.80000, 5),
   },
 };
-houseCard();
 
+
+const createHouse = () => ({
+  avatar: (HOUSE_CARD.author.avatar),
+  title: (HOUSE_CARD.offer.title),
+  address: (HOUSE_CARD.location.lat) + ' ' + (HOUSE_CARD.location.lng),
+  price: (HOUSE_CARD.offer.price),
+  type: (HOUSE_CARD.offer.type),
+  rooms: (HOUSE_CARD.offer.rooms),
+  guests: (HOUSE_CARD.offer.guests),
+  checkin: (HOUSE_CARD.offer.checkin),
+  checkout: (HOUSE_CARD.offer.checkout),
+  features: (HOUSE_CARD.offer.features),
+  description: (HOUSE_CARD.offer.description),
+  photos: (HOUSE_CARD.offer.photos),
+  lat: (HOUSE_CARD.location.lat),
+  lng: (HOUSE_CARD.location.lng),
+
+});
+
+createHouse();
 /*
 Структура каждого объекта должна быть следующей:
 
