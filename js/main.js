@@ -54,7 +54,12 @@ const HOUSE_CARD = {
 };
 
 const randomFeatures = HOUSE_CARD.offer['features'];
+const index = randomNumber(0, randomFeatures.length - 1);
+randomFeatures[index];
+
 const randomPhoto = HOUSE_CARD.offer['photos'];
+const index2 = randomNumber(0, randomPhoto.length - 1);
+randomPhoto[index];
 
 
 const createHouse = () => ({
@@ -67,9 +72,9 @@ const createHouse = () => ({
   guests: (HOUSE_CARD.offer.guests),
   checkin: (HOUSE_CARD.offer.checkin),
   checkout: (HOUSE_CARD.offer.checkout),
-  features: randomFeatures,
+  features: randomFeatures[index],
   description: (HOUSE_CARD.offer.description),
-  photos: randomPhoto,
+  photos: randomPhoto[index2],
   lat: (HOUSE_CARD.location.lat),
   lng: (HOUSE_CARD.location.lng),
 
