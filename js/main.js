@@ -53,28 +53,37 @@ const HOUSE_CARD = {
   },
 };
 
-const randomFeatures = HOUSE_CARD.offer['features'];
-const index = randomNumber(0, randomFeatures.length - 1);
-randomFeatures[index];
-
-const randomPhoto = HOUSE_CARD.offer['photos'];
-const index2 = randomNumber(0, randomPhoto.length - 1);
-randomPhoto[index];
+const RANDOM_TITLE = ['Супердом', 'такого вы еше не видели', '1 на миллион'];
+const RANDOM_TYPE = ['flat', 'house', 'bungalow', 'hotel'];
+const RANDOM_CHECKIN = ['12:00', '13:00', '14:00'];
+const RANDOM_CHECKOUT = ['12:00', '13:00', '14:00'];
+const RANDOM_FEATURES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
+const RANDOM_DESCRIPTION = ['лучший дом с садом', 'дом вашей мечты', 'прекрасный вид на море'];
+const RANDOM_PHOTOS = ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
+'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
+'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'];
+const titleIndex = randomNumber(0, RANDOM_TITLE.length - 1);
+const typeIndex = randomNumber(0, RANDOM_TYPE.length - 1);
+const checkinIndex = randomNumber(0, RANDOM_CHECKIN.length - 1);
+const checkoutIndex = randomNumber(0, RANDOM_CHECKOUT.length - 1);
+const featuresIndex = randomNumber(0, RANDOM_FEATURES.length - 1);
+const descriptionIndex = randomNumber(0, RANDOM_DESCRIPTION.length - 1);
+const photosIndex = randomNumber(0, RANDOM_PHOTOS.length - 1);
 
 
 const createHouse = () => ({
   avatar: (HOUSE_CARD.author.avatar),
-  title: (HOUSE_CARD.offer.title),
+  title: RANDOM_TITLE[titleIndex],
   address: (HOUSE_CARD.location.lat) + ' ' + (HOUSE_CARD.location.lng),
   price: (HOUSE_CARD.offer.price),
-  type: (HOUSE_CARD.offer.type),
+  type: RANDOM_TYPE[typeIndex],
   rooms: (HOUSE_CARD.offer.rooms),
   guests: (HOUSE_CARD.offer.guests),
-  checkin: (HOUSE_CARD.offer.checkin),
-  checkout: (HOUSE_CARD.offer.checkout),
-  features: randomFeatures[index],
+  checkin: RANDOM_CHECKIN[checkinIndex],
+  checkout: RANDOM_CHECKOUT[checkoutIndex],
+  features: RANDOM_FEATURES[featuresIndex],
   description: (HOUSE_CARD.offer.description),
-  photos: randomPhoto[index2],
+  photos: RANDOM_PHOTOS[photosIndex],
   lat: (HOUSE_CARD.location.lat),
   lng: (HOUSE_CARD.location.lng),
 
