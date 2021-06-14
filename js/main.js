@@ -88,7 +88,7 @@ const createHouse = () => ({
   lng: (HOUSE_CARD.location.lng),
 
 });
-const createHouses = new Array(10).fill(null).map(() => createHouse());
+const CREATE_HOUSES = new Array(10).fill(null).map(() => createHouse());
 createHouse();
-window.console.log(createHouses);
+window.console.log(CREATE_HOUSES);
 
