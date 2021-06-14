@@ -33,7 +33,7 @@ const HOUSE_CARD = {
   },
   offer: {
     title: ('Супердом', 'такого вы еше не видели', '1 на миллион'),
-    address: location.lng,
+    address: '',
     price: randomNumber(70, 100),
     type: ('flat', 'house', 'bungalow', 'hotel'),
     rooms: randomNumber(1, 4),
@@ -53,6 +53,9 @@ const HOUSE_CARD = {
   },
 };
 
+const randomFeatures = HOUSE_CARD.offer['features'];
+const randomPhoto = HOUSE_CARD.offer['photos'];
+
 
 const createHouse = () => ({
   avatar: (HOUSE_CARD.author.avatar),
@@ -64,9 +67,9 @@ const createHouse = () => ({
   guests: (HOUSE_CARD.offer.guests),
   checkin: (HOUSE_CARD.offer.checkin),
   checkout: (HOUSE_CARD.offer.checkout),
-  features: (HOUSE_CARD.offer.features),
+  features: randomFeatures,
   description: (HOUSE_CARD.offer.description),
-  photos: (HOUSE_CARD.offer.photos),
+  photos: randomPhoto,
   lat: (HOUSE_CARD.location.lat),
   lng: (HOUSE_CARD.location.lng),
 
