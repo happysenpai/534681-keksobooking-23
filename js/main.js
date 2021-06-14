@@ -82,7 +82,7 @@ const createHouse = () => ({
   checkin: RANDOM_CHECKIN[checkinIndex],
   checkout: RANDOM_CHECKOUT[checkoutIndex],
   features: RANDOM_FEATURES[featuresIndex],
-  description: (HOUSE_CARD.offer.description),
+  description: RANDOM_DESCRIPTION[descriptionIndex],
   photos: RANDOM_PHOTOS[photosIndex],
   lat: (HOUSE_CARD.location.lat),
   lng: (HOUSE_CARD.location.lng),
