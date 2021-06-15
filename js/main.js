@@ -48,11 +48,11 @@ const HOUSE_CARD = {
   },
 
   location: {
-    lat: randomCoordinates(35.65000, 35.70000, 5),
-    lng: randomCoordinates(139.70000, 139.80000, 5),
+    lat: 123 ,
+    lng: 123,
   },
 };
-const RANDOM_AVATAR = randomNumber(1, 8);
+window.console.log(HOUSE_CARD);
 const RANDOM_TITLE = ['Супердом', 'такого вы еше не видели', '1 на миллион'];
 const RANDOM_TYPE = ['flat', 'house', 'bungalow', 'hotel'];
 const RANDOM_CHECKIN = ['12:00', '13:00', '14:00'];
@@ -62,33 +62,33 @@ const RANDOM_DESCRIPTION = ['лучший дом с садом', 'дом ваш�
 const RANDOM_PHOTOS = ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'];
-const titleIndex = randomNumber(0, RANDOM_TITLE.length - 1);
-const typeIndex = randomNumber(0, RANDOM_TYPE.length - 1);
-const checkinIndex = randomNumber(0, RANDOM_CHECKIN.length - 1);
-const checkoutIndex = randomNumber(0, RANDOM_CHECKOUT.length - 1);
-const featuresIndex = randomNumber(0, RANDOM_FEATURES.length - 1);
-const descriptionIndex = randomNumber(0, RANDOM_DESCRIPTION.length - 1);
-const photosIndex = randomNumber(0, RANDOM_PHOTOS.length - 1);
 
 
-const createHouse = () => ({
-  avatar: `img/avatars/user${  0  }${RANDOM_AVATAR}.png`,
-  title: RANDOM_TITLE[titleIndex],
-  address: `${HOUSE_CARD.location.lat }${ HOUSE_CARD.location.lng}`,
-  price: (HOUSE_CARD.offer.price),
-  type: RANDOM_TYPE[typeIndex],
-  rooms: (HOUSE_CARD.offer.rooms),
-  guests: (HOUSE_CARD.offer.guests),
-  checkin: RANDOM_CHECKIN[checkinIndex],
-  checkout: RANDOM_CHECKOUT[checkoutIndex],
-  features: RANDOM_FEATURES[featuresIndex],
-  description: RANDOM_DESCRIPTION[descriptionIndex],
-  photos: RANDOM_PHOTOS[photosIndex],
-  lat: (HOUSE_CARD.location.lat),
-  lng: (HOUSE_CARD.location.lng),
-
-});
-const CREATE_HOUSES = new Array(10).fill(null).map(() => createHouse());
-createHouse();
+const createHouse = () => {
+  const titleIndex = randomNumber(0, RANDOM_TITLE.length - 1);
+  const typeIndex = randomNumber(0, RANDOM_TYPE.length - 1);
+  const checkinIndex = randomNumber(0, RANDOM_CHECKIN.length - 1);
+  const checkoutIndex = randomNumber(0, RANDOM_CHECKOUT.length - 1);
+  const featuresIndex = randomNumber(0, RANDOM_FEATURES.length - 1);
+  const descriptionIndex = randomNumber(0, RANDOM_DESCRIPTION.length - 1);
+  const photosIndex = randomNumber(0, RANDOM_PHOTOS.length - 1);
+  return{
+    avatar: `img/avatars/user${  0  }${randomNumber(1, 8)}.png`,
+    title: RANDOM_TITLE[titleIndex],
+    address: randomCoordinates(35.65000, 35.70000, 5),
+    price: randomNumber(70, 100),
+    type: RANDOM_TYPE[typeIndex],
+    rooms: randomNumber(1, 4),
+    guests: randomNumber(1, 8),
+    checkin: RANDOM_CHECKIN[checkinIndex],
+    checkout: RANDOM_CHECKOUT[checkoutIndex],
+    features: RANDOM_FEATURES[featuresIndex],
+    description: RANDOM_DESCRIPTION[descriptionIndex],
+    photos: RANDOM_PHOTOS[photosIndex],
+    lat: randomCoordinates(35.65000, 35.70000, 5),
+    lng: randomCoordinates(139.70000, 139.80000, 5),
+  };
+};
+const CREATE_HOUSES = new Array(10).fill().map(() => createHouse());
 window.console.log(CREATE_HOUSES);
 
