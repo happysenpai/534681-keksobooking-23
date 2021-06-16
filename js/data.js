@@ -30,8 +30,6 @@ const MAX_COORDINATES_LNG = 139.80000;
 
 const COORDINAT_FLOAT_COUNT = 5;
 
-export const OFFERS_COUNT = 10;
-
 
 export const createOffer = () => {
   const avatarValue = getRandomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
