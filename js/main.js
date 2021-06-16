@@ -46,30 +46,30 @@ const errorCheck = function (min, max) {
 };
 
 
-const randomNumber = function (min, max) {
+const getRandomNumber = function (min, max) {
   return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min) : null;
 };
 
 
-const randomCoordinates = function (min, max, floatQuantity) {
+const getRandomCoordinates = function (min, max, floatQuantity) {
   return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min).toFixed(floatQuantity) : null;
 };
 
 
 const createOffer = () => {
-  const avatarValue = randomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
-  const titleIndex = randomNumber(0, TITLES.length - 1);
-  const typeIndex = randomNumber(0, TYPES.length - 1);
-  const checkinIndex = randomNumber(0, CHECKINS.length - 1);
-  const checkoutIndex = randomNumber(0, CHECKOUTS.length - 1);
-  const featuresIndex = randomNumber(0, FEATURES.length - 1);
-  const descriptionIndex = randomNumber(0, DESCRIPTIONS.length - 1);
-  const photosIndex = randomNumber(0, PHOTOS.length - 1);
-  const priceValue = randomNumber(MIN_PRICE_VALUE ,MAX_PRICE_VALUE);
-  const roomsValue = randomNumber(MIN_ROOMS_VALUE, MAX_ROOMS_VALUE);
-  const guestsValue = randomNumber(MIN_GUESTS_VALUE, MAX_GUESTS_VALUE);
-  const coordinatesLat = randomCoordinates(MIN_COORDINATES_LAT, MAX_COORDINATES_LAT, COORDINAT_FLOAT_COUNT);
-  const coordinatesLng = randomCoordinates(MIN_COORDINATES_LNG, MAX_COORDINATES_LNG, COORDINAT_FLOAT_COUNT);
+  const avatarValue = getRandomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
+  const titleIndex = getRandomNumber(0, TITLES.length - 1);
+  const typeIndex = getRandomNumber(0, TYPES.length - 1);
+  const checkinIndex = getRandomNumber(0, CHECKINS.length - 1);
+  const checkoutIndex = getRandomNumber(0, CHECKOUTS.length - 1);
+  const featuresIndex = getRandomNumber(0, FEATURES.length - 1);
+  const descriptionIndex = getRandomNumber(0, DESCRIPTIONS.length - 1);
+  const photosIndex = getRandomNumber(0, PHOTOS.length - 1);
+  const priceValue = getRandomNumber(MIN_PRICE_VALUE ,MAX_PRICE_VALUE);
+  const roomsValue = getRandomNumber(MIN_ROOMS_VALUE, MAX_ROOMS_VALUE);
+  const guestsValue = getRandomNumber(MIN_GUESTS_VALUE, MAX_GUESTS_VALUE);
+  const coordinatesLat = getRandomCoordinates(MIN_COORDINATES_LAT, MAX_COORDINATES_LAT, COORDINAT_FLOAT_COUNT);
+  const coordinatesLng = getRandomCoordinates(MIN_COORDINATES_LNG, MAX_COORDINATES_LNG, COORDINAT_FLOAT_COUNT);
   return{
     avatar: `img/avatars/user${0}${avatarValue}.png`,
     title: TITLES[titleIndex],
