@@ -8,6 +8,28 @@ const PHOTOS = ['https://assets.htmlacademy.ru/content/intensive/javascript-1/ke
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'];
 
+const MIN_AVATAR_VALUE = 1;
+const MAX_AVATAR_VALUE = 8;
+
+const MIN_PRICE_VALUE = 70;
+const MAX_PRICE_VALUE = 100;
+
+const MIN_ROOMS_VALUE = 1;
+const MAX_ROOMS_VALUE = 4;
+
+const MIN_GUESTS_VALUE = 1;
+const MAX_GUESTS_VALUE = 8;
+
+const MIN_COORDINATES_LAT = 35.65000;
+const MAX_COORDINATES_LAT = 35.70000;
+
+const MIN_COORDINATES_LNG = 139.70000;
+const MAX_COORDINATES_LNG = 139.80000;
+
+const COORDINAT_FLOAT_COUNT = 5;
+
+const OFFERS_COUNT = 10;
+
 const errorCheck = function (min, max) {
   let displayError = '';
   if (max <= min) {
@@ -34,8 +56,8 @@ const randomCoordinates = function (min, max, floatQuantity) {
 };
 
 
-const offers = () => {
-  const avatarValue = randomNumber(1, 8);
+const houseOffer = () => {
+  const avatarValue = randomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
   const titleIndex = randomNumber(0, TITLES.length - 1);
   const typeIndex = randomNumber(0, TYPES.length - 1);
   const checkinIndex = randomNumber(0, CHECKINS.length - 1);
@@ -43,11 +65,11 @@ const offers = () => {
   const featuresIndex = randomNumber(0, FEATURES.length - 1);
   const descriptionIndex = randomNumber(0, DESCRIPTIONS.length - 1);
   const photosIndex = randomNumber(0, PHOTOS.length - 1);
-  const priceValue = randomNumber(70, 100);
-  const roomsValue = randomNumber(1, 4);
-  const guestsValue = randomNumber(1, 8);
-  const coordinatesLat = randomCoordinates(35.65000, 35.70000, 5);
-  const coordinatesLng = randomCoordinates(139.70000, 139.80000, 5);
+  const priceValue = randomNumber(MIN_PRICE_VALUE ,MAX_PRICE_VALUE);
+  const roomsValue = randomNumber(MIN_ROOMS_VALUE, MAX_ROOMS_VALUE);
+  const guestsValue = randomNumber(MIN_GUESTS_VALUE, MAX_GUESTS_VALUE);
+  const coordinatesLat = randomCoordinates(MIN_COORDINATES_LAT, MAX_COORDINATES_LAT, COORDINAT_FLOAT_COUNT);
+  const coordinatesLng = randomCoordinates(MIN_COORDINATES_LNG, MAX_COORDINATES_LNG, COORDINAT_FLOAT_COUNT);
   return{
     avatar: `img/avatars/user${  0  }${avatarValue}.png`,
     title: TITLES[titleIndex],
@@ -65,6 +87,6 @@ const offers = () => {
     lng: coordinatesLng,
   };
 };
-const createHouses = new Array(10).fill().map(() => offers());
-window.console.log(createHouses);
+const offers = new Array(OFFERS_COUNT).fill().map(() => houseOffer());
+window.console.log(offers);
 
