@@ -64,5 +64,5 @@ export const createOffer = () => {
     lng: coordinatesLng,
   };
 };
-export const offers = new Array(OFFERS_COUNT).fill().map(() => createOffer());
+
 
