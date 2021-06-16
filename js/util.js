@@ -1,4 +1,4 @@
-export const errorCheck = function (min, max) {
+const errorCheck = function (min, max) {
   let displayError = '';
   if (max <= min) {
     displayError = ('максимальное значение меньше минимального');
@@ -13,11 +13,13 @@ export const errorCheck = function (min, max) {
   return true;
 };
 
-export const getRandomNumber = function (min, max) {
+const getRandomNumber = function (min, max) {
   return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min) : null;
 };
 
-export const getRandomCoordinates = function (min, max, floatQuantity) {
+const getRandomCoordinates = function (min, max, floatQuantity) {
   return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min).toFixed(floatQuantity) : null;
 };
 
+export {getRandomNumber};
+export {getRandomCoordinates};
