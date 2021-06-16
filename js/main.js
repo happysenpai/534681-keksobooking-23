@@ -1,3 +1,13 @@
+const TITLES = ['Супердом', 'такого вы еше не видели', '1 на миллион'];
+const TYPES = ['flat', 'house', 'bungalow', 'hotel'];
+const CHECKINS = ['12:00', '13:00', '14:00'];
+const CHECKOUTS = ['12:00', '13:00', '14:00'];
+const FEATURES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
+const DESCRIPTIONS = ['лучший дом с садом', 'дом вашей мечты', 'прекрасный вид на море'];
+const PHOTOS = ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
+  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
+  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'];
+
 const errorCheck = function (min, max) {
   let displayError = '';
   if (max <= min) {
@@ -24,71 +34,38 @@ const randomCoordinates = function (min, max, floatQuantity) {
 };
 
 
-randomNumber(0, 9.8);
-randomCoordinates(0, 9.8, 2);
-
-const HOUSE_CARD = {
-  author: {
-    avatar: 'img/avatars/user{{xx}}.png',
-  },
-  offer: {
-    title: ('Супердом', 'такого вы еше не видели', '1 на миллион'),
-    address: '',
-    price: randomNumber(70, 100),
-    type: ('flat', 'house', 'bungalow', 'hotel'),
-    rooms: randomNumber(1, 4),
-    guests: randomNumber(1, 8),
-    checkin: ('12:00', '13:00', '14:00'),
-    checkout: ('12:00', '13:00', '14:00'),
-    features: ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'],
-    description: ('лучший дом с садом', 'дом вашей мечты', 'прекрасный вид на море'),
-    photos: ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
-      'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
-      'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'],
-  },
-
-  location: {
-    lat: 123 ,
-    lng: 123,
-  },
-};
-window.console.log(HOUSE_CARD);
-const RANDOM_TITLE = ['Супердом', 'такого вы еше не видели', '1 на миллион'];
-const RANDOM_TYPE = ['flat', 'house', 'bungalow', 'hotel'];
-const RANDOM_CHECKIN = ['12:00', '13:00', '14:00'];
-const RANDOM_CHECKOUT = ['12:00', '13:00', '14:00'];
-const RANDOM_FEATURES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
-const RANDOM_DESCRIPTION = ['лучший дом с садом', 'дом вашей мечты', 'прекрасный вид на море'];
-const RANDOM_PHOTOS = ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'];
-
-
-const createHouse = () => {
-  const titleIndex = randomNumber(0, RANDOM_TITLE.length - 1);
-  const typeIndex = randomNumber(0, RANDOM_TYPE.length - 1);
-  const checkinIndex = randomNumber(0, RANDOM_CHECKIN.length - 1);
-  const checkoutIndex = randomNumber(0, RANDOM_CHECKOUT.length - 1);
-  const featuresIndex = randomNumber(0, RANDOM_FEATURES.length - 1);
-  const descriptionIndex = randomNumber(0, RANDOM_DESCRIPTION.length - 1);
-  const photosIndex = randomNumber(0, RANDOM_PHOTOS.length - 1);
+const offers = () => {
+  const avatarValue = randomNumber(1, 8);
+  const titleIndex = randomNumber(0, TITLES.length - 1);
+  const typeIndex = randomNumber(0, TYPES.length - 1);
+  const checkinIndex = randomNumber(0, CHECKINS.length - 1);
+  const checkoutIndex = randomNumber(0, CHECKOUTS.length - 1);
+  const featuresIndex = randomNumber(0, FEATURES.length - 1);
+  const descriptionIndex = randomNumber(0, DESCRIPTIONS.length - 1);
+  const photosIndex = randomNumber(0, PHOTOS.length - 1);
+  const addressValue = '';
+  const priceValue = randomNumber(70, 100);
+  const roomsValue = randomNumber(1, 4);
+  const guestsValue = randomNumber(1, 8);
+  const coordinatesLat = randomCoordinates(35.65000, 35.70000, 5);
+  const coordinatesLng = randomCoordinates(139.70000, 139.80000, 5);
   return{
-    avatar: `img/avatars/user${  0  }${randomNumber(1, 8)}.png`,
-    title: RANDOM_TITLE[titleIndex],
-    address: randomCoordinates(35.65000, 35.70000, 5),
-    price: randomNumber(70, 100),
-    type: RANDOM_TYPE[typeIndex],
-    rooms: randomNumber(1, 4),
-    guests: randomNumber(1, 8),
-    checkin: RANDOM_CHECKIN[checkinIndex],
-    checkout: RANDOM_CHECKOUT[checkoutIndex],
-    features: RANDOM_FEATURES[featuresIndex],
-    description: RANDOM_DESCRIPTION[descriptionIndex],
-    photos: RANDOM_PHOTOS[photosIndex],
-    lat: randomCoordinates(35.65000, 35.70000, 5),
-    lng: randomCoordinates(139.70000, 139.80000, 5),
+    avatar: `img/avatars/user${  0  }${avatarValue}.png`,
+    title: TITLES[titleIndex],
+    address: addressValue,
+    price: priceValue,
+    type: TYPES[typeIndex],
+    rooms: roomsValue,
+    guests: guestsValue,
+    checkin: CHECKINS[checkinIndex],
+    checkout: CHECKOUTS[checkoutIndex],
+    features: FEATURES[featuresIndex],
+    description: DESCRIPTIONS[descriptionIndex],
+    photos: PHOTOS[photosIndex],
+    lat: coordinatesLat,
+    lng: coordinatesLng,
   };
 };
-const CREATE_HOUSES = new Array(10).fill().map(() => createHouse());
-window.console.log(CREATE_HOUSES);
+const createHouses = new Array(10).fill().map(() => offers());
+window.console.log(createHouses);
 
