@@ -56,7 +56,7 @@ const randomCoordinates = function (min, max, floatQuantity) {
 };
 
 
-const houseOffer = () => {
+const createOffer = () => {
   const avatarValue = randomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
   const titleIndex = randomNumber(0, TITLES.length - 1);
   const typeIndex = randomNumber(0, TYPES.length - 1);
@@ -87,6 +87,6 @@ const houseOffer = () => {
     lng: coordinatesLng,
   };
 };
-const offers = new Array(OFFERS_COUNT).fill().map(() => houseOffer());
+const offers = new Array(OFFERS_COUNT).fill().map(() => createOffer());
 window.console.log(offers);
 
