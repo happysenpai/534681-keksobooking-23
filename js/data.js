@@ -30,10 +30,10 @@ const MAX_COORDINATES_LNG = 139.80000;
 
 const COORDINAT_FLOAT_COUNT = 5;
 
-const OFFERS_COUNT = 10;
+export const OFFERS_COUNT = 10;
 
 
-const createOffer = () => {
+export const createOffer = () => {
   const avatarValue = getRandomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
   const titleIndex = getRandomNumber(0, TITLES.length - 1);
   const typeIndex = getRandomNumber(0, TYPES.length - 1);
@@ -64,6 +64,5 @@ const createOffer = () => {
     lng: coordinatesLng,
   };
 };
-const offers = new Array(OFFERS_COUNT).fill().map(() => createOffer());
-window.console.log(offers);
+export const offers = new Array(OFFERS_COUNT).fill().map(() => createOffer());
 
