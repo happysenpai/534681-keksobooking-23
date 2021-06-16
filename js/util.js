@@ -1,3 +1,4 @@
+
 const errorCheck = function (min, max) {
   let displayError = '';
   if (max <= min) {
@@ -14,12 +15,12 @@ const errorCheck = function (min, max) {
 };
 
 
-const getRandomNumber = function (min, max) {
+export const getRandomNumber = function (min, max) {
   return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min) : null;
 };
 
 
-const getRandomCoordinates = function (min, max, floatQuantity) {
+export const getRandomCoordinates = function (min, max, floatQuantity) {
   return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min).toFixed(floatQuantity) : null;
 };
 
