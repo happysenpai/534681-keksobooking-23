@@ -1,2 +1,3 @@
-import './util.js';
-import './data.js';
+import {offers} from './data.js';
+
+window.console.log(offers);
