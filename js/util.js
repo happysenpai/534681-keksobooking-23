@@ -21,5 +21,5 @@ const getRandomCoordinates = function (min, max, floatQuantity) {
   return errorCheck(min, max) ? Math.floor(Math.random() * (max - min + 1) + min).toFixed(floatQuantity) : null;
 };
 
-export {getRandomNumber};
-export {getRandomCoordinates};
+export {getRandomNumber, getRandomCoordinates};
+
