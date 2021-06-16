@@ -1,5 +1,4 @@
-import {getRandomNumber} from './util.js';
-import {getRandomCoordinates} from './util.js';
+import {getRandomNumber, getRandomCoordinates} from './util.js';
 const TITLES = ['Супердом', 'такого вы еше не видели', '1 на миллион'];
 const TYPES = ['flat', 'house', 'bungalow', 'hotel'];
 const CHECKINS = ['12:00', '13:00', '14:00'];
