@@ -45,20 +45,28 @@ const createOffer = () => {
   const coordinatesLat = getRandomCoordinates(MIN_COORDINATES_LAT, MAX_COORDINATES_LAT, COORDINAT_FLOAT_COUNT);
   const coordinatesLng = getRandomCoordinates(MIN_COORDINATES_LNG, MAX_COORDINATES_LNG, COORDINAT_FLOAT_COUNT);
   return{
-    avatar: `img/avatars/user${0}${avatarValue}.png`,
-    title: TITLES[titleIndex],
-    address: `${coordinatesLat} ${coordinatesLng}`,
-    price: priceValue,
-    type: TYPES[typeIndex],
-    rooms: roomsValue,
-    guests: guestsValue,
-    checkin: CHECKINS[checkinIndex],
-    checkout: CHECKOUTS[checkoutIndex],
-    features: FEATURES[featuresIndex],
-    description: DESCRIPTIONS[descriptionIndex],
-    photos: PHOTOS[photosIndex],
-    lat: coordinatesLat,
-    lng: coordinatesLng,
+    autor:{
+      avatar: `img/avatars/user${0}${avatarValue}.png`,
+    },
+    offer: {
+      title: TITLES[titleIndex],
+      address: `${coordinatesLat}, ${coordinatesLng}`,
+      price: priceValue,
+      type: TYPES[typeIndex],
+      rooms: roomsValue,
+      guests: guestsValue,
+      checkin: CHECKINS[checkinIndex],
+      checkout: CHECKOUTS[checkoutIndex],
+      features: FEATURES[featuresIndex],
+      description: DESCRIPTIONS[descriptionIndex],
+      photos: PHOTOS[photosIndex],
+    },
+    location: {
+      lat: coordinatesLat,
+      lng: coordinatesLng,
+    },
+
+
   };
 };
 
