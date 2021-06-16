@@ -43,7 +43,6 @@ const offers = () => {
   const featuresIndex = randomNumber(0, FEATURES.length - 1);
   const descriptionIndex = randomNumber(0, DESCRIPTIONS.length - 1);
   const photosIndex = randomNumber(0, PHOTOS.length - 1);
-  const addressValue = '';
   const priceValue = randomNumber(70, 100);
   const roomsValue = randomNumber(1, 4);
   const guestsValue = randomNumber(1, 8);
@@ -52,7 +51,7 @@ const offers = () => {
   return{
     avatar: `img/avatars/user${  0  }${avatarValue}.png`,
     title: TITLES[titleIndex],
-    address: addressValue,
+    address: `${coordinatesLat } ${  coordinatesLng}`,
     price: priceValue,
     type: TYPES[typeIndex],
     rooms: roomsValue,
