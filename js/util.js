@@ -18,7 +18,7 @@ const getRandomNumber = function (min, max) {
 };
 
 const getRandomCoordinates = function (min, max, floatQuantity) {
-  return errorCheck(min, max) ? ((Math.random() * (max - min)) + min).toFixed(floatQuantity) : null;
+  return errorCheck(min, max) ? (Math.random() * (max - min) + min).toFixed(floatQuantity) : null;
 };
 
 export {getRandomNumber, getRandomCoordinates};
