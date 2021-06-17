@@ -44,6 +44,7 @@ const createOffer = () => {
   const guestsValue = getRandomNumber(MIN_GUESTS_VALUE, MAX_GUESTS_VALUE);
   const coordinatesLat = getRandomCoordinates(MIN_COORDINATES_LAT, MAX_COORDINATES_LAT, COORDINAT_FLOAT_COUNT);
   const coordinatesLng = getRandomCoordinates(MIN_COORDINATES_LNG, MAX_COORDINATES_LNG, COORDINAT_FLOAT_COUNT);
+
   return{
     autor:{
       avatar: `img/avatars/user${0}${avatarValue}.png`,
@@ -65,8 +66,6 @@ const createOffer = () => {
       lat: coordinatesLat,
       lng: coordinatesLng,
     },
-
-
   };
 };
 
