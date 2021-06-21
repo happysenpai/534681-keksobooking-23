@@ -47,7 +47,7 @@ const fragment = () => {
   baseTemplate.querySelector('.popup__description').textContent = cardDescription;
 
   const newPhotos = cloneTemplate.querySelector('img')[2];
-  baseTemplate.querySelector('img').src[2] = cardPhotos;
+  baseTemplate.querySelector('img')[2].src = cardPhotos;
 
   window.console.log(newAvatar,newTitle,newAdress,newPrice,newType,newCapacity,newTime,newFeatures,newDescription,newPhotos);
   return mainBlock.appendChild(baseTemplate);
