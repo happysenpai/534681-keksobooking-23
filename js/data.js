@@ -68,6 +68,6 @@ const createOffer = () => {
     },
   };
 };
+export {createOffer,TITLES};
 
-export {createOffer};
-
+window.console.log(createOffer[offer.title]);
