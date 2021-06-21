@@ -1,2 +1,6 @@
-const description = document.querySelector('#card');
-window.console.log(description);
+const mainBock = document.querySelector('#map-canvas');
+
+const baseTemplate = document.querySelector('#card').content;
+const basetemp = baseTemplate.cloneNode(true);
+
+mainBock.appendChild(basetemp);
