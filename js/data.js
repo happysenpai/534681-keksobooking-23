@@ -69,5 +69,3 @@ const createOffer = () => {
   };
 };
 export {createOffer,TITLES};
-
-window.console.log(createOffer[offer.title]);
