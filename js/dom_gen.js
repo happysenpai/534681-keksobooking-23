@@ -1,6 +1,12 @@
+import {createOffer,TITLES} from './data.js';
 const mainBock = document.querySelector('#map-canvas');
-
 const baseTemplate = document.querySelector('#card').content;
-const basetemp = baseTemplate.cloneNode(true);
 
-mainBock.appendChild(basetemp);
+const newTitle = baseTemplate.querySelector('h3').textContent;
+baseTemplate.querySelector('h3').textContent = TITLES;
+
+window.console.log(newTitle);
+
+
+
+mainBock.appendChild(baseTemplate);
