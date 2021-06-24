@@ -1,5 +1,8 @@
 import {createOffer} from './data.js';
-const offers = new Array(1).fill().map(() => createOffer());
+
+const OFFERS_COUNT = 10;
+
+const offers = new Array(OFFERS_COUNT).fill().map(() => createOffer());
 
 const cardAvatar = offers[0].autor.avatar;
 const cardTitle = offers[0].offer.title;
