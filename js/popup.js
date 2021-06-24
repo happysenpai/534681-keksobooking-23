@@ -5,62 +5,37 @@ const createCard = () => {
   const cloneTemplate = baseTemplate.cloneNode(true);
 
   const newAvatar = cloneTemplate.querySelector('img').textContent;
-  baseTemplate.querySelector('img').src = cardAvatar;
+  baseTemplate.querySelector('img').src = '';
 
   const newTitle = cloneTemplate.querySelector('.popup__title').textContent;
-  baseTemplate.querySelector('.popup__title').textContent = cardTitle;
+  baseTemplate.querySelector('.popup__title').textContent = '';
 
   const newAdress = cloneTemplate.querySelector('.popup__text--address').textContent;
-  baseTemplate.querySelector('.popup__text--address').textContent = cardAdress;
+  baseTemplate.querySelector('.popup__text--address').textContent = '';
 
   const newPrice = cloneTemplate.querySelector('.popup__text--price').textContent;
-  baseTemplate.querySelector('.popup__text--price').textContent = `${cardPrice} ₽/ночь`;
+  baseTemplate.querySelector('.popup__text--price').textContent = `${''} ₽/ночь`;
 
   const newType = cloneTemplate.querySelector('.popup__type').textContent;
-  baseTemplate.querySelector('.popup__type').textContent = cardType;
+  baseTemplate.querySelector('.popup__type').textContent = '';
 
   const newCapacity = cloneTemplate.querySelector('.popup__text--capacity').textContent;
-  baseTemplate.querySelector('.popup__text--capacity').textContent = `${cardRoom} комнаты для ${cardGuest} гостей`;
+  baseTemplate.querySelector('.popup__text--capacity').textContent = `${''} комнаты для ${''} гостей`;
 
   const newTime = cloneTemplate.querySelector('.popup__text--time').textContent;
-  baseTemplate.querySelector('.popup__text--time').textContent = `Заезд после  ${cardCheckout}, выезд до ${cardCheckin}`;
+  baseTemplate.querySelector('.popup__text--time').textContent = `Заезд после  ${''}, выезд до ${''}`;
 
   const newFeatures = cloneTemplate.querySelector('.popup__features').textContent;
-  baseTemplate.querySelector('.popup__features').textContent = cardFeatures;
+  baseTemplate.querySelector('.popup__features').textContent = '';
 
   const newDescription = cloneTemplate.querySelector('.popup__description').textContent;
-  baseTemplate.querySelector('.popup__description').textContent = cardDescription;
+  baseTemplate.querySelector('.popup__description').textContent = '';
 
   const newPhotos = cloneTemplate.querySelector('.popup__photos img').src;
-  baseTemplate.querySelector('.popup__photos img').src = cardPhotos;
+  baseTemplate.querySelector('.popup__photos img').src = '';
 
   window.console.log(newAvatar,newTitle,newAdress,newPrice,newType,newCapacity,newTime,newFeatures,newDescription,newPhotos);
   return mainBlock.appendChild(baseTemplate);
 };
 
 export {createCard};
-
-/*Заведите модуль, который будет отвечать за генерацию разметки похожих элементов.
-
-На основе временных данных для разработки и шаблона #card создайте DOM-элементы, соответствующие объявлениям, и заполните их данными:
-
-Выведите заголовок объявления offer.title в заголовок .popup__title.
-Выведите адрес offer.address в блок .popup__text--address.
-Выведите цену offer.price в блок .popup__text--price строкой вида {{offer.price}} ₽/ночь. Например, «5200 ₽/ночь».
-В блок .popup__type выведите тип жилья offer.type, сопоставив с подписями:
-Квартира для flat
-Бунгало для bungalow
-Дом для house
-Дворец для palace
-Отель для hotel
-Выведите количество гостей и комнат offer.rooms и offer.guests в блок .popup__text--capacity строкой вида {{offer.rooms}} комнаты для {{offer.guests}} гостей. Например, «2 комнаты для 3 гостей».
-Время заезда и выезда offer.checkin и offer.checkout в блок .popup__text--time строкой вида Заезд после {{offer.checkin}}, выезд до {{offer.checkout}}. Например, «Заезд после 14:00, выезд до 14:00».
-В список .popup__features выведите все доступные удобства в объявлении.
-В блок .popup__description выведите описание объекта недвижимости offer.description.
-В блок .popup__photos выведите все фотографии из списка offer.photos. Каждая из строк массива photos должна записываться как атрибут src соответствующего изображения.
-Замените значение атрибута src у аватарки пользователя .popup__avatar на значение поля author.avatar.
-Предусмотрите ситуацию, когда данных для заполнения не хватает. Например, отсутствует описание. В этом случае соответствующий блок в карточке скрывается.
-
-Отрисуйте один из сгенерированных DOM-элементов, например первый, в блок #map-canvas, чтобы проверить, что данные в разметку были вставлены корректно.
-
-Подключите модуль в проект.*/
