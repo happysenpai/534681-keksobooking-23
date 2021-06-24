@@ -24,7 +24,7 @@ const createCard = (offers) => {
 
   cloneTemplate.querySelector('.popup__photos img').src = offers.offer.photos;
 
-  return mainBlock.appendChild(baseTemplate);
+  return mainBlock.appendChild(cloneTemplate);
 };
 
 export {createCard};
