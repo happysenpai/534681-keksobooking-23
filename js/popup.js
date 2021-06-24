@@ -1,40 +1,29 @@
 const mainBlock = document.querySelector('#map-canvas');
 const baseTemplate = document.querySelector('#card').content;
 
-const createCard = () => {
+const createCard = (offers) => {
   const cloneTemplate = baseTemplate.cloneNode(true);
 
-  const newAvatar = cloneTemplate.querySelector('img').textContent;
-  baseTemplate.querySelector('img').src = '';
+  cloneTemplate.querySelector('img').src = offers.autor.avatar;
 
-  const newTitle = cloneTemplate.querySelector('.popup__title').textContent;
-  baseTemplate.querySelector('.popup__title').textContent = '';
+  cloneTemplate.querySelector('.popup__title').textContent = offers.offer.title;
 
-  const newAdress = cloneTemplate.querySelector('.popup__text--address').textContent;
-  baseTemplate.querySelector('.popup__text--address').textContent = '';
+  cloneTemplate.querySelector('.popup__text--address').textContent = offers.offer.address;
 
-  const newPrice = cloneTemplate.querySelector('.popup__text--price').textContent;
-  baseTemplate.querySelector('.popup__text--price').textContent = `${''} ₽/ночь`;
+  cloneTemplate.querySelector('.popup__text--price').textContent = `${offers.offer.price} ₽/ночь`;
 
-  const newType = cloneTemplate.querySelector('.popup__type').textContent;
-  baseTemplate.querySelector('.popup__type').textContent = '';
+  cloneTemplate.querySelector('.popup__type').textContent = offers.offer.type;
 
-  const newCapacity = cloneTemplate.querySelector('.popup__text--capacity').textContent;
-  baseTemplate.querySelector('.popup__text--capacity').textContent = `${''} комнаты для ${''} гостей`;
+  cloneTemplate.querySelector('.popup__text--capacity').textContent = `${offers.offer.rooms} комнаты для ${offers.offer.guests} гостей`;
 
-  const newTime = cloneTemplate.querySelector('.popup__text--time').textContent;
-  baseTemplate.querySelector('.popup__text--time').textContent = `Заезд после  ${''}, выезд до ${''}`;
+  cloneTemplate.querySelector('.popup__text--time').textContent = `Заезд после  ${offers.offer.checkin}, выезд до ${offers.offer.checkout}`;
 
-  const newFeatures = cloneTemplate.querySelector('.popup__features').textContent;
-  baseTemplate.querySelector('.popup__features').textContent = '';
+  cloneTemplate.querySelector('.popup__features').textContent = offers.offer.features;
 
-  const newDescription = cloneTemplate.querySelector('.popup__description').textContent;
-  baseTemplate.querySelector('.popup__description').textContent = '';
+  cloneTemplate.querySelector('.popup__description').textContent = offers.offer.description;
 
-  const newPhotos = cloneTemplate.querySelector('.popup__photos img').src;
-  baseTemplate.querySelector('.popup__photos img').src = '';
+  cloneTemplate.querySelector('.popup__photos img').src = offers.offer.photos;
 
-  window.console.log(newAvatar,newTitle,newAdress,newPrice,newType,newCapacity,newTime,newFeatures,newDescription,newPhotos);
   return mainBlock.appendChild(baseTemplate);
 };
 

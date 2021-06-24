@@ -4,5 +4,5 @@ const OFFERS_COUNT = 10;
 
 const offers = new Array(OFFERS_COUNT).fill().map(() => createOffer());
 
-createCard(offers[1]);
+createCard(offers[0]);
 
