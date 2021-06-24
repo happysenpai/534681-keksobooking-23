@@ -68,4 +68,4 @@ const createOffer = () => {
     },
   };
 };
-export {createOffer,TITLES};
+export {createOffer};
