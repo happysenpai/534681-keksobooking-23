@@ -1,23 +1,7 @@
-import {createOffer} from './data.js';
-import {offers} from './main.js';
-
-const cardAvatar = offers[2].autor.avatar;
-const cardTitle = offers[0].offer.title;
-const cardAdress = offers[0].offer.address;
-const cardPrice = offers[0].offer.price;
-const cardType = offers[0].offer.type;
-const cardGuest = offers[0].offer.guests;
-const cardRoom = offers[0].offer.rooms;
-const cardCheckin = offers[0].offer.checkin;
-const cardCheckout = offers[0].offer.checkout;
-const cardFeatures = offers[0].offer.features;
-const cardDescription = offers[0].offer.description;
-const cardPhotos = offers[0].offer.photos;
-
 const mainBlock = document.querySelector('#map-canvas');
 const baseTemplate = document.querySelector('#card').content;
 
-const fragment = () => {
+const createCard = () => {
   const cloneTemplate = baseTemplate.cloneNode(true);
 
   const newAvatar = cloneTemplate.querySelector('img').textContent;
@@ -54,9 +38,8 @@ const fragment = () => {
   return mainBlock.appendChild(baseTemplate);
 };
 
+export {createCard};
 
-fragment();
-export {fragment};
 /*Заведите модуль, который будет отвечать за генерацию разметки похожих элементов.
 
 На основе временных данных для разработки и шаблона #card создайте DOM-элементы, соответствующие объявлениям, и заполните их данными:
