@@ -1,30 +1,29 @@
-const mainBlock = document.querySelector('#map-canvas');
 const baseTemplate = document.querySelector('#card').content;
 
-const createCard = (offers) => {
-  const cloneTemplate = baseTemplate.cloneNode(true);
+const createCard = (offer) => {
+  const card = baseTemplate.cloneNode(true);
 
-  cloneTemplate.querySelector('img').src = offers.autor.avatar;
+  card.querySelector('img').src = offer.autor.avatar;
 
-  cloneTemplate.querySelector('.popup__title').textContent = offers.offer.title;
+  card.querySelector('.popup__title').textContent = offer.offer.title;
 
-  cloneTemplate.querySelector('.popup__text--address').textContent = offers.offer.address;
+  card.querySelector('.popup__text--address').textContent = offer.offer.address;
 
-  cloneTemplate.querySelector('.popup__text--price').textContent = `${offers.offer.price} ₽/ночь`;
+  card.querySelector('.popup__text--price').textContent = `${offer.offer.price} ₽/ночь`;
 
-  cloneTemplate.querySelector('.popup__type').textContent = offers.offer.type;
+  card.querySelector('.popup__type').textContent = offer.offer.type;
 
-  cloneTemplate.querySelector('.popup__text--capacity').textContent = `${offers.offer.rooms} комнаты для ${offers.offer.guests} гостей`;
+  card.querySelector('.popup__text--capacity').textContent = `${offer.offer.rooms} комнаты для ${offer.offer.guests} гостей`;
 
-  cloneTemplate.querySelector('.popup__text--time').textContent = `Заезд после  ${offers.offer.checkin}, выезд до ${offers.offer.checkout}`;
+  card.querySelector('.popup__text--time').textContent = `Заезд после  ${offer.offer.checkin}, выезд до ${offer.offer.checkout}`;
 
-  cloneTemplate.querySelector('.popup__features').textContent = offers.offer.features;
+  card.querySelector('.popup__features').textContent = offer.offer.features;
 
-  cloneTemplate.querySelector('.popup__description').textContent = offers.offer.description;
+  card.querySelector('.popup__description').textContent = offer.offer.description;
 
-  cloneTemplate.querySelector('.popup__photos img').src = offers.offer.photos;
+  card.querySelector('.popup__photos img').src = offer.offer.photos;
 
-  return mainBlock.appendChild(cloneTemplate);
+  return card;
 };
 
 export {createCard};
