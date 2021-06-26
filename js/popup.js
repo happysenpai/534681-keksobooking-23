@@ -34,10 +34,8 @@ const createCard = (offer) => {
       img.height = '40';
       img.width = '45';
       img.alt = 'Фотография жилья';
-      img.addClass ='classname';
+      img.addClass ='не работает!!!!';
       addImg.appendChild(img);
-      img.addClass = '123';
-      window.console.log(img);
     }
   };
   photoGallery();
