@@ -27,7 +27,7 @@ const createCard = (offer) => {
   const photoGallery = () => {
     const addImg = card.querySelector('.popup__photos');
     let ii = 0;
-    for (ii = 0; ii < 3; ii++)
+    for (ii = 0; ii < PHOTOS.length; ii++)
     {
       const img = document.createElement('IMG');
       img.src = PHOTOS[ii];
