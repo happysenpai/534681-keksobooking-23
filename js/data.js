@@ -1,6 +1,12 @@
 import {getRandomNumber, getRandomCoordinates} from './util.js';
 const TITLES = ['Супердом', 'такого вы еше не видели', '1 на миллион'];
-const TYPES = ['flat', 'house', 'bungalow', 'hotel'];
+const TYPES = {
+  flat: 'Квартира ',
+  house: 'Дом ',
+  bungalow: 'Бунгало ',
+  hotel: 'Отель ',
+  palace: 'Дворец ',
+};
 const CHECKINS = ['12:00', '13:00', '14:00'];
 const CHECKOUTS = ['12:00', '13:00', '14:00'];
 const FEATURES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
@@ -33,7 +39,7 @@ const COORDINAT_FLOAT_COUNT = 5;
 const createOffer = () => {
   const avatarValue = getRandomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
   const titleIndex = getRandomNumber(0, TITLES.length - 1);
-  const typeIndex = getRandomNumber(0, TYPES.length - 1);
+  const typeIndex = getRandomNumber(0, TYPES.key - 1);
   const checkinIndex = getRandomNumber(0, CHECKINS.length - 1);
   const checkoutIndex = getRandomNumber(0, CHECKOUTS.length - 1);
   const featuresIndex = getRandomNumber(0, FEATURES.length - 1);
