@@ -9,9 +9,17 @@ const TYPES = {
 };
 const CHECKINS = ['12:00', '13:00', '14:00'];
 const CHECKOUTS = ['12:00', '13:00', '14:00'];
-const FEATURES = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
+const FEATURES = [
+  'wifi',
+  'dishwasher',
+  'parking',
+  'washer',
+  'elevator',
+  'conditioner',
+];
 const DESCRIPTIONS = ['лучший дом с садом', 'дом вашей мечты', 'прекрасный вид на море'];
-const PHOTOS = ['https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
+const PHOTOS = [
+  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg'];
 
@@ -37,9 +45,10 @@ const COORDINAT_FLOAT_COUNT = 5;
 
 
 const createOffer = () => {
+  const newKey = Object.values(TYPES);
   const avatarValue = getRandomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
   const titleIndex = getRandomNumber(0, TITLES.length - 1);
-  const typeIndex = getRandomNumber(0, TYPES.key - 1);
+  const typeIndex = getRandomNumber(0, newKey.length - 1);
   const checkinIndex = getRandomNumber(0, CHECKINS.length - 1);
   const checkoutIndex = getRandomNumber(0, CHECKOUTS.length - 1);
   const featuresIndex = getRandomNumber(0, FEATURES.length - 1);
@@ -50,7 +59,6 @@ const createOffer = () => {
   const guestsValue = getRandomNumber(MIN_GUESTS_VALUE, MAX_GUESTS_VALUE);
   const coordinatesLat = getRandomCoordinates(MIN_COORDINATES_LAT, MAX_COORDINATES_LAT, COORDINAT_FLOAT_COUNT);
   const coordinatesLng = getRandomCoordinates(MIN_COORDINATES_LNG, MAX_COORDINATES_LNG, COORDINAT_FLOAT_COUNT);
-
   return{
     autor:{
       avatar: `img/avatars/user${0}${avatarValue}.png`,
@@ -59,7 +67,7 @@ const createOffer = () => {
       title: TITLES[titleIndex],
       address: `${coordinatesLat}, ${coordinatesLng}`,
       price: priceValue,
-      type: TYPES[typeIndex],
+      type:newKey[typeIndex],
       rooms: roomsValue,
       guests: guestsValue,
       checkin: CHECKINS[checkinIndex],
@@ -75,3 +83,4 @@ const createOffer = () => {
   };
 };
 export {createOffer};
+
