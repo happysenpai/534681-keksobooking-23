@@ -43,7 +43,6 @@ const MAX_COORDINATES_LNG = 139.80000;
 
 const COORDINAT_FLOAT_COUNT = 5;
 
-
 const createOffer = () => {
   const newKey = Object.values(TYPES);
   const avatarValue = getRandomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
@@ -82,5 +81,5 @@ const createOffer = () => {
     },
   };
 };
-export {createOffer};
+export {createOffer,PHOTOS};
 

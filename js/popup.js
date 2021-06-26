@@ -1,3 +1,4 @@
+import {PHOTOS} from './data.js';
 const baseTemplate = document.querySelector('#card').content;
 
 const createCard = (offer) => {
@@ -21,8 +22,25 @@ const createCard = (offer) => {
 
   card.querySelector('.popup__description').textContent = offer.offer.description;
 
-  card.querySelector('.popup__photos img').src = offer.offer.photos;
-
+  const removeImg = card.querySelector('.popup__photos img');
+  removeImg.remove();
+  const photoGallery = () => {
+    const addImg = card.querySelector('.popup__photos');
+    let ii = 0;
+    for (ii = 0; ii < 3; ii++)
+    {
+      const img = document.createElement('IMG');
+      img.src = PHOTOS[ii];
+      img.height = '40';
+      img.width = '45';
+      img.alt = 'Фотография жилья';
+      img.addClass ='classname';
+      addImg.appendChild(img);
+      img.addClass = '123';
+      window.console.log(img);
+    }
+  };
+  photoGallery();
   return card;
 };
 
