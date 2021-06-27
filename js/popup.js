@@ -24,7 +24,7 @@ const createCard = (offer) => {
     for (let ii = 0; ii < featuresIndex.length; ii++)
     {
       const newli = document.createElement('LI');
-      newli.classList.add('popup__feature', `popup__feature--${offer.offer.features[ii]}`);
+      newli.classList.add('popup__feature', `popup__feature--${offer.offer.features}`);
       findLi.appendChild(newli);
     }
   };
@@ -39,7 +39,7 @@ const createCard = (offer) => {
     for (let ii = 0; ii < photosIndex.length; ii++)
     {
       const img = document.createElement('IMG');
-      img.src = offer.offer.photos[ii];
+      img.src = offer.offer.photos;
       img.classList.add('popup__photo');
       img.height = '40';
       img.width = '45';

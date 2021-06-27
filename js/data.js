@@ -74,9 +74,9 @@ const createOffer = () => {
       guests: guestsValue,
       checkin: CHECKINS[checkinIndex],
       checkout: CHECKOUTS[checkoutIndex],
-      features: FEATURES,
+      features: FEATURES[featuresIndex],
       description: DESCRIPTIONS[descriptionIndex],
-      photos: PHOTOS,
+      photos: PHOTOS[photosIndex],
     },
     location: {
       lat: coordinatesLat,
