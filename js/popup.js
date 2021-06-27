@@ -1,4 +1,4 @@
-import{photosIndex,featuresIndex} from './data.js';
+import{PHOTOS, FEATURES} from './data.js';
 const baseTemplate = document.querySelector('#card').content;
 
 const createCard = (offer) => {
@@ -21,7 +21,7 @@ const createCard = (offer) => {
   const featuresGallery = () => {
     const findLi = card.querySelector('.popup__features');
     findLi.innerHTML = '';
-    for (let ii = 0; ii < featuresIndex.length; ii++)
+    for (let ii = 0; ii < FEATURES.length; ii++)
     {
       const newli = document.createElement('LI');
       newli.classList.add('popup__feature', `popup__feature--${offer.offer.features}`);
@@ -36,7 +36,7 @@ const createCard = (offer) => {
   removeImg.remove();
   const photoGallery = () => {
     const addImg = card.querySelector('.popup__photos');
-    for (let ii = 0; ii < photosIndex.length; ii++)
+    for (let ii = 0; ii < PHOTOS.length; ii++)
     {
       const img = document.createElement('IMG');
       img.src = offer.offer.photos;

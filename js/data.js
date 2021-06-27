@@ -46,6 +46,7 @@ const COORDINAT_FLOAT_COUNT = 5;
 
 const featuresIndex = new Array(getRandomNumber(0, FEATURES.length - 1));
 const photosIndex = new Array(getRandomNumber(0, PHOTOS.length - 1));
+window.console.log(FEATURES);
 
 const createOffer = () => {
   const newKey = Object.values(TYPES);
@@ -85,5 +86,5 @@ const createOffer = () => {
   };
 };
 
-export {createOffer,featuresIndex,photosIndex};
+export {createOffer,FEATURES,PHOTOS,featuresIndex,photosIndex};
 
