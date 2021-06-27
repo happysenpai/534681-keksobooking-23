@@ -1,4 +1,4 @@
-import {PHOTOS} from './data.js';
+import {PHOTOS,FEATURES} from './data.js';
 const baseTemplate = document.querySelector('#card').content;
 
 const createCard = (offer) => {
@@ -18,7 +18,17 @@ const createCard = (offer) => {
 
   card.querySelector('.popup__text--time').textContent = `Заезд после  ${offer.offer.checkin}, выезд до ${offer.offer.checkout}`;
 
-  card.querySelector('.popup__features').textContent = offer.offer.features;
+  const featuresGallery = () => {
+    const findLi = card.querySelector('.popup__features');
+    findLi.innerHTML = '';
+    for (let ii = 0; ii < FEATURES.length; ii++)
+    {
+      const newli = document.createElement('LI');
+      newli.classList.add('popup__feature', `popup__feature--${FEATURES[ii]}`);
+      findLi.appendChild(newli);
+    }
+  };
+  featuresGallery();
 
   card.querySelector('.popup__description').textContent = offer.offer.description;
 
