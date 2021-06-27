@@ -17,6 +17,7 @@ const FEATURES = [
   'elevator',
   'conditioner',
 ];
+
 const DESCRIPTIONS = ['лучший дом с садом', 'дом вашей мечты', 'прекрасный вид на море'];
 const PHOTOS = [
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
@@ -43,6 +44,9 @@ const MAX_COORDINATES_LNG = 139.80000;
 
 const COORDINAT_FLOAT_COUNT = 5;
 
+const featuresIndex = new Array(getRandomNumber(0, FEATURES.length - 1));
+const photosIndex = new Array(getRandomNumber(0, PHOTOS.length - 1));
+
 const createOffer = () => {
   const newKey = Object.values(TYPES);
   const avatarValue = getRandomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
@@ -56,6 +60,7 @@ const createOffer = () => {
   const guestsValue = getRandomNumber(MIN_GUESTS_VALUE, MAX_GUESTS_VALUE);
   const coordinatesLat = getRandomCoordinates(MIN_COORDINATES_LAT, MAX_COORDINATES_LAT, COORDINAT_FLOAT_COUNT);
   const coordinatesLng = getRandomCoordinates(MIN_COORDINATES_LNG, MAX_COORDINATES_LNG, COORDINAT_FLOAT_COUNT);
+
   return{
     autor:{
       avatar: `img/avatars/user${0}${avatarValue}.png`,
@@ -79,5 +84,6 @@ const createOffer = () => {
     },
   };
 };
-export {createOffer,PHOTOS,FEATURES};
+
+export {createOffer,featuresIndex,photosIndex};
 
