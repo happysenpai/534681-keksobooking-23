@@ -26,15 +26,14 @@ const createCard = (offer) => {
   removeImg.remove();
   const photoGallery = () => {
     const addImg = card.querySelector('.popup__photos');
-    let ii = 0;
-    for (ii = 0; ii < PHOTOS.length; ii++)
+    for (let ii = 0; ii < PHOTOS.length; ii++)
     {
       const img = document.createElement('IMG');
       img.src = PHOTOS[ii];
+      img.classList.add('popup__photo');
       img.height = '40';
       img.width = '45';
       img.alt = 'Фотография жилья';
-      img.addClass ='не работает!!!!';
       addImg.appendChild(img);
     }
   };
