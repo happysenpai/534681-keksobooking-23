@@ -50,9 +50,7 @@ const createOffer = () => {
   const typeIndex = getRandomNumber(0, newKey.length - 1);
   const checkinIndex = getRandomNumber(0, CHECKINS.length - 1);
   const checkoutIndex = getRandomNumber(0, CHECKOUTS.length - 1);
-  const featuresIndex = getRandomNumber(0, FEATURES.length - 1);
   const descriptionIndex = getRandomNumber(0, DESCRIPTIONS.length - 1);
-  const photosIndex = getRandomNumber(0, PHOTOS.length - 1);
   const priceValue = getRandomNumber(MIN_PRICE_VALUE ,MAX_PRICE_VALUE);
   const roomsValue = getRandomNumber(MIN_ROOMS_VALUE, MAX_ROOMS_VALUE);
   const guestsValue = getRandomNumber(MIN_GUESTS_VALUE, MAX_GUESTS_VALUE);
@@ -71,9 +69,9 @@ const createOffer = () => {
       guests: guestsValue,
       checkin: CHECKINS[checkinIndex],
       checkout: CHECKOUTS[checkoutIndex],
-      features: FEATURES[featuresIndex],
+      features: FEATURES,
       description: DESCRIPTIONS[descriptionIndex],
-      photos: PHOTOS[photosIndex],
+      photos: PHOTOS,
     },
     location: {
       lat: coordinatesLat,
