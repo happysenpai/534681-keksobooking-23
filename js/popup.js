@@ -1,4 +1,3 @@
-import {getRandomNumber} from './util.js';
 import {PHOTOS,FEATURES} from './data.js';
 const baseTemplate = document.querySelector('#card').content;
 
