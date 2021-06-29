@@ -44,19 +44,25 @@ const MAX_COORDINATES_LNG = 139.80000;
 
 const COORDINAT_FLOAT_COUNT = 5;
 
-
 const featuresArry = new Array(getRandomNumber(0, FEATURES.length - 1));
-const findDuplicates = () => featuresArry.find((item, index) => featuresArry.indexOf(item) !== index);
+const getRandomElement = (array) => array[getRandomNumber(0, array.length - 1)];
+let randomFeature = getRandomElement(FEATURES);
 for (let ii = 0; ii < featuresArry.length; ii++) {
-  featuresArry[ii] = FEATURES[getRandomNumber(0, featuresArry.length - 1)];
-  findDuplicates(featuresArry[ii]);
-  window.console.log(findDuplicates(featuresArry[ii]));
+  while(featuresArry.includes(randomFeature)) {
+    randomFeature = getRandomElement(FEATURES);
+  }
+  featuresArry[ii] = randomFeature;
+}
+const photosArray = new Array(getRandomNumber(0, PHOTOS.length - 1));
+let randomPhotos = getRandomElement(PHOTOS);
+for (let ii = 0; ii < photosArray.length; ii++) {
+  while(photosArray.includes(randomPhotos)) {
+    randomPhotos = getRandomElement(PHOTOS);
+  }
+  photosArray[ii] = randomPhotos;
 }
 
-const photosArray = new Array(getRandomNumber(0, PHOTOS.length - 1));
-
 const createOffer = () => {
-
   const newKey = Object.values(TYPES);
   const avatarValue = getRandomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
   const titleIndex = getRandomNumber(0, TITLES.length - 1);
@@ -83,9 +89,9 @@ const createOffer = () => {
       guests: guestsValue,
       checkin: CHECKINS[checkinIndex],
       checkout: CHECKOUTS[checkoutIndex],
-      features: FEATURES[featuresArry],
+      features: randomFeature,
       description: DESCRIPTIONS[descriptionIndex],
-      photos: PHOTOS[photosArray],
+      photos: randomPhotos,
     },
     location: {
       lat: coordinatesLat,
