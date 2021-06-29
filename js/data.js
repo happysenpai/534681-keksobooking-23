@@ -1,4 +1,4 @@
-import {getRandomNumber, getRandomCoordinates} from './util.js';
+import { getRandomNumber, getRandomCoordinates } from './util.js';
 const TITLES = ['Супердом', 'такого вы еше не видели', '1 на миллион'];
 const TYPES = {
   flat: 'Квартира ',
@@ -44,11 +44,19 @@ const MAX_COORDINATES_LNG = 139.80000;
 
 const COORDINAT_FLOAT_COUNT = 5;
 
-const featuresIndex = new Array(getRandomNumber(0, FEATURES.length - 1));
-const photosIndex = new Array(getRandomNumber(0, PHOTOS.length - 1));
-window.console.log(FEATURES);
+
+const featuresArry = new Array(getRandomNumber(0, FEATURES.length - 1));
+const findDuplicates = () => featuresArry.find((item, index) => featuresArry.indexOf(item) !== index);
+for (let ii = 0; ii < featuresArry.length; ii++) {
+  featuresArry[ii] = FEATURES[getRandomNumber(0, featuresArry.length - 1)];
+  findDuplicates(featuresArry[ii]);
+  window.console.log(findDuplicates(featuresArry[ii]));
+}
+
+const photosArray = new Array(getRandomNumber(0, PHOTOS.length - 1));
 
 const createOffer = () => {
+
   const newKey = Object.values(TYPES);
   const avatarValue = getRandomNumber(MIN_AVATAR_VALUE, MAX_AVATAR_VALUE);
   const titleIndex = getRandomNumber(0, TITLES.length - 1);
@@ -56,28 +64,28 @@ const createOffer = () => {
   const checkinIndex = getRandomNumber(0, CHECKINS.length - 1);
   const checkoutIndex = getRandomNumber(0, CHECKOUTS.length - 1);
   const descriptionIndex = getRandomNumber(0, DESCRIPTIONS.length - 1);
-  const priceValue = getRandomNumber(MIN_PRICE_VALUE ,MAX_PRICE_VALUE);
+  const priceValue = getRandomNumber(MIN_PRICE_VALUE, MAX_PRICE_VALUE);
   const roomsValue = getRandomNumber(MIN_ROOMS_VALUE, MAX_ROOMS_VALUE);
   const guestsValue = getRandomNumber(MIN_GUESTS_VALUE, MAX_GUESTS_VALUE);
   const coordinatesLat = getRandomCoordinates(MIN_COORDINATES_LAT, MAX_COORDINATES_LAT, COORDINAT_FLOAT_COUNT);
   const coordinatesLng = getRandomCoordinates(MIN_COORDINATES_LNG, MAX_COORDINATES_LNG, COORDINAT_FLOAT_COUNT);
 
-  return{
-    autor:{
+  return {
+    autor: {
       avatar: `img/avatars/user${0}${avatarValue}.png`,
     },
     offer: {
       title: TITLES[titleIndex],
       address: `${coordinatesLat}, ${coordinatesLng}`,
       price: priceValue,
-      type:newKey[typeIndex],
+      type: newKey[typeIndex],
       rooms: roomsValue,
       guests: guestsValue,
       checkin: CHECKINS[checkinIndex],
       checkout: CHECKOUTS[checkoutIndex],
-      features: FEATURES[featuresIndex],
+      features: FEATURES[featuresArry],
       description: DESCRIPTIONS[descriptionIndex],
-      photos: PHOTOS[photosIndex],
+      photos: PHOTOS[photosArray],
     },
     location: {
       lat: coordinatesLat,
@@ -86,5 +94,5 @@ const createOffer = () => {
   };
 };
 
-export {createOffer,FEATURES,PHOTOS,featuresIndex,photosIndex};
+export { createOffer, FEATURES, PHOTOS};
 
