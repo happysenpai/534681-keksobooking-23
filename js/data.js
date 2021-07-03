@@ -44,23 +44,20 @@ const MAX_COORDINATES_LNG = 139.80000;
 
 const COORDINAT_FLOAT_COUNT = 5;
 
-const featuresArry = new Array(getRandomNumber(0, FEATURES.length - 1));
 const getRandomElement = (array) => array[getRandomNumber(0, array.length - 1)];
-let randomFeature = getRandomElement(FEATURES);
-for (let ii = 0; ii < featuresArry.length; ii++) {
-  while(featuresArry.includes(randomFeature)) {
-    randomFeature = getRandomElement(FEATURES);
+
+const someArray = (myArray) => {
+  const featuresArry = new Array(getRandomNumber(0, myArray.length - 1));
+  let randomFeature = getRandomElement(myArray);
+  for (let ii = 0; ii < featuresArry.length; ii++) {
+    while(featuresArry.includes(randomFeature)) {
+      randomFeature = getRandomElement(myArray);
+    }
+    return  featuresArry[ii] = randomFeature;
+
   }
-  featuresArry[ii] = randomFeature;
-}
-const photosArray = new Array(getRandomNumber(0, PHOTOS.length - 1));
-let randomPhotos = getRandomElement(PHOTOS);
-for (let ii = 0; ii < photosArray.length; ii++) {
-  while(photosArray.includes(randomPhotos)) {
-    randomPhotos = getRandomElement(PHOTOS);
-  }
-  photosArray[ii] = randomPhotos;
-}
+};
+window.console.log(someArray(FEATURES));
 
 const createOffer = () => {
   const newKey = Object.values(TYPES);
@@ -89,9 +86,9 @@ const createOffer = () => {
       guests: guestsValue,
       checkin: CHECKINS[checkinIndex],
       checkout: CHECKOUTS[checkoutIndex],
-      features: randomFeature,
+      features: someArray(FEATURES),
       description: DESCRIPTIONS[descriptionIndex],
-      photos: randomPhotos,
+      photos: someArray(PHOTOS),
     },
     location: {
       lat: coordinatesLat,
