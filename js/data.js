@@ -47,12 +47,12 @@ const COORDINAT_FLOAT_COUNT = 5;
 const getRandomElement = (array) => array[getRandomNumber(0, array.length - 1)];
 const getRandomArray = (myArray) => {
   const randomArray = new Array(getRandomNumber(0, myArray.length - 1));
-  let randomFeature = getRandomElement(myArray);
+  let randomItem = getRandomElement(myArray);
   for (let ii = 0; ii < randomArray.length; ii++) {
-    while(randomArray.includes(randomFeature)) {
-      randomFeature = getRandomElement(myArray);
+    while(randomArray.includes(randomItem)) {
+      randomItem = getRandomElement(myArray);
     }
-    randomArray[ii] = randomFeature;
+    randomArray[ii] = randomItem;
   }
   return randomArray;
 };
