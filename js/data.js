@@ -46,18 +46,18 @@ const COORDINAT_FLOAT_COUNT = 5;
 
 const getRandomElement = (array) => array[getRandomNumber(0, array.length - 1)];
 
-const someArray = (myArray) => {
+const getRandomArray = (myArray) => {
   const featuresArry = new Array(getRandomNumber(0, myArray.length - 1));
   let randomFeature = getRandomElement(myArray);
   for (let ii = 0; ii < featuresArry.length; ii++) {
     while(featuresArry.includes(randomFeature)) {
       randomFeature = getRandomElement(myArray);
     }
-     featuresArry[ii] = randomFeature;
+    featuresArry[ii] = randomFeature;
   }
   return randomFeature;
 };
-window.console.log(someArray(FEATURES));
+window.console.log(getRandomArray(FEATURES));
 
 const createOffer = () => {
   const newKey = Object.values(TYPES);
@@ -86,9 +86,9 @@ const createOffer = () => {
       guests: guestsValue,
       checkin: CHECKINS[checkinIndex],
       checkout: CHECKOUTS[checkoutIndex],
-      features: someArray(FEATURES),
+      features: getRandomArray(FEATURES),
       description: DESCRIPTIONS[descriptionIndex],
-      photos: someArray(PHOTOS),
+      photos: getRandomArray(PHOTOS),
     },
     location: {
       lat: coordinatesLat,
