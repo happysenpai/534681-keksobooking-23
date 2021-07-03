@@ -53,9 +53,9 @@ const someArray = (myArray) => {
     while(featuresArry.includes(randomFeature)) {
       randomFeature = getRandomElement(myArray);
     }
-    return  featuresArry[ii] = randomFeature;
-
+     featuresArry[ii] = randomFeature;
   }
+  return randomFeature;
 };
 window.console.log(someArray(FEATURES));
 
