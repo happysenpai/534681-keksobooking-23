@@ -45,19 +45,17 @@ const MAX_COORDINATES_LNG = 139.80000;
 const COORDINAT_FLOAT_COUNT = 5;
 
 const getRandomElement = (array) => array[getRandomNumber(0, array.length - 1)];
-
 const getRandomArray = (myArray) => {
-  const featuresArry = new Array(getRandomNumber(0, myArray.length - 1));
+  const RandomArray = new Array(getRandomNumber(0, myArray.length - 1));
   let randomFeature = getRandomElement(myArray);
-  for (let ii = 0; ii < featuresArry.length; ii++) {
-    while(featuresArry.includes(randomFeature)) {
+  for (let ii = 0; ii < RandomArray.length; ii++) {
+    while(RandomArray.includes(randomFeature)) {
       randomFeature = getRandomElement(myArray);
     }
-    featuresArry[ii] = randomFeature;
+    RandomArray[ii] = randomFeature;
   }
-  return randomFeature;
+  return RandomArray;
 };
-window.console.log(getRandomArray(FEATURES));
 
 const createOffer = () => {
   const newKey = Object.values(TYPES);
