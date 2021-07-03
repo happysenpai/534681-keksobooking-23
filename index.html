@@ -40,7 +40,7 @@
             <option value="low">до 10000&#x20bd;</option>
             <option value="high">от 50000&#x20bd;</option>
           </select>
-          <select name="housing-rooms" id="housing-rooms" class="map__filter" required>
+          <select name="housing-rooms" id="housing-rooms" class="map__filter">
             <option value="any" selected>Любое число комнат</option>
             <option value="1">Одна комната</option>
             <option value="2">Две комнаты</option>
@@ -94,9 +94,9 @@
               объявление должно давать гостям полное представление о вашем жилье.</p>
           </div>
         </fieldset>
-        <fieldset class="ad-form__element ad-form__element--wide">
+        <fieldset class="ad-form__element ad-form__element--wide" >
           <label class="ad-form__label" for="title">Заголовок объявления</label>
-          <input id="title" name="title" type="text" placeholder="Милая, уютная квартирка в центре Токио">
+          <input id="title" name="title" type="text" placeholder="Милая, уютная квартирка в центре Токио" required>
         </fieldset>
         <fieldset class="ad-form__element ad-form__element--wide">
           <label class="ad-form__label" for="address">Адрес (координаты)</label>
@@ -114,7 +114,7 @@
         </fieldset>
         <fieldset class="ad-form__element">
           <label class="ad-form__label" for="price">Цена за ночь, руб.</label>
-          <input id="price" name="price" type="number" placeholder="5000">
+          <input id="price" name="price" type="number" placeholder="5000" required>
         </fieldset>
         <fieldset class="ad-form__element ad-form__element--time">
           <label class="ad-form__label" for="timein">Время заезда и выезда</label>
@@ -131,7 +131,7 @@
         </fieldset>
         <fieldset class="ad-form__element">
           <label class="ad-form__label" for="room_number">Количество комнат</label>
-          <select id="room_number" name="rooms">
+          <select id="room_number" name="rooms" required>
             <option value="1" selected>1 комната</option>
             <option value="2">2 комнаты</option>
             <option value="3">3 комнаты</option>
