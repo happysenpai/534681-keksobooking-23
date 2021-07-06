@@ -28,3 +28,11 @@ userPriceInput.addEventListener('input', () => {
 
   userPriceInput.reportValidity();
 });
+
+
+const selectElement = (document.querySelector('#room_number'));
+const seleectElement2 =selectElement.selectedIndex = 2;
+seleectElement2.addEventListener('change', () => {
+  document.querySelector('#capacity').selectedIndex = 2;
+
+});
