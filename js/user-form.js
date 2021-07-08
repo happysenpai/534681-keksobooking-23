@@ -36,8 +36,7 @@ const SelectChange = (select1, select2) =>{
   select1.value = select2.value;
 };
 v1.addEventListener('change', (event) => {
-  v2.value  = (event.target.value);
+  SelectChange(event);
 });
+
 SelectChange(v1,v2);
-
-
