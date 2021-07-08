@@ -29,10 +29,15 @@ userPriceInput.addEventListener('input', () => {
   userPriceInput.reportValidity();
 });
 
+const v1 = document.querySelector('#room_number');
+const v2 = document.querySelector('#capacity');
 
-const selectElement = (document.querySelector('#room_number'));
-const seleectElement2 =selectElement.selectedIndex = 2;
-seleectElement2.addEventListener('change', () => {
-  document.querySelector('#capacity').selectedIndex = 2;
-
+const SelectChange = (select1, select2) =>{
+  select1.value = select2.value;
+};
+v1.addEventListener('change', (event) => {
+  v2.value  = (event.target.value);
 });
+SelectChange(v1,v2);
+
+
