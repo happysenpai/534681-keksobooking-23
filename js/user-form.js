@@ -3,6 +3,17 @@ const MAX_NAME_LENGTH = 100;
 const MAX_PRICE = 1000000;
 const userTitleInput = document.querySelector('#title');
 const userPriceInput = document.querySelector('#price');
+const roomNumber = document.querySelector('#room_number');
+const capacity = document.querySelector('#capacity');
+const guestNumber = capacity.querySelectorAll('option');
+
+const NumberOfGuests = {
+  1: ['1'],
+  2: ['1', '2'],
+  3: ['1', '2', '3'],
+  100: ['0'],
+};
+
 
 userTitleInput.addEventListener('input', () => {
   const valueLength = userTitleInput.value.length;
@@ -29,16 +40,22 @@ userPriceInput.addEventListener('input', () => {
   userPriceInput.reportValidity();
 });
 
-const rooms = document.querySelector('#room_number');
-const capacitys = document.querySelector('#capacity');
 
-const SelectChange = (select1, select2) =>{
-  select1.value = select2.value;
+const validateRooms = () => {
+  const roomValue = roomNumber.value;
+
+  guestNumber.forEach((guest) => {
+    const isDisabled = (NumberOfGuests[roomValue].indexOf(guest.value) === -1);
+    guest.selected = NumberOfGuests[roomValue][0] === guest.value;
+    guest.disabled = isDisabled;
+    guest.hidden = isDisabled;
+  });
 };
-rooms.addEventListener('change', () => {
-  SelectChange(rooms,capacitys);
-});
-capacitys.addEventListener('change', () => {
-  SelectChange(capacitys,rooms);
-});
 
+validateRooms();
+
+const onRoomNumberChange = () => {
+  validateRooms();
+};
+
+roomNumber.addEventListener('change', onRoomNumberChange);
