@@ -29,14 +29,16 @@ userPriceInput.addEventListener('input', () => {
   userPriceInput.reportValidity();
 });
 
-const v1 = document.querySelector('#room_number');
-const v2 = document.querySelector('#capacity');
+const rooms = document.querySelector('#room_number');
+const capacitys = document.querySelector('#capacity');
 
 const SelectChange = (select1, select2) =>{
   select1.value = select2.value;
 };
-v1.addEventListener('change', (event) => {
-  SelectChange(event);
+rooms.addEventListener('change', () => {
+  SelectChange(rooms,capacitys);
+});
+capacitys.addEventListener('change', () => {
+  SelectChange(capacitys,rooms);
 });
 
-SelectChange(v1,v2);
